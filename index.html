@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>地址和经营类目</title>
+</head>
+<body>
+	<h1>地址：</h1>
+	<div class="wrap" id="area_hook">
+		<select class="province"></select>
+		<select class="city"></select>
+		<select class="area"></select>
+	</div>
+	<h1>经营类型：</h1>
+	<div class="wrap" id="category_hook">
+		<select></select>
+		<select></select>
+		<select></select>
+	</div>
+	<script src="dist/jquery.min.js"></script>
+	<script src="datas/area.js"></script>
+	<script src="datas/category.js"></script>
+	<script src="dist/cascade.js"></script>
+	<script type="text/javascript">
+		$(function () {
+            $('#area_hook').cascade({
+              level_first: '浙江省',
+              level_second: '杭州市',
+              level_third: '西湖区'
+            });
+            $('#category_hook').cascade({
+                resource: category
+            });
+		});
+	</script>
+</body>
+</html>
